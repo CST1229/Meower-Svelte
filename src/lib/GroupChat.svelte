@@ -1,0 +1,1 @@
+<!-- A group chat. Used in the group chat list -->
