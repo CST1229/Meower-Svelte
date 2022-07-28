@@ -182,6 +182,7 @@ export async function updateProfile() {
 			val: {
 				theme: profile.theme,
 				mode: profile.mode,
+				debug: profile.debug,
 				sfx: profile.sfx,
 				bgm: profile.bgm,
 				bgm_song: profile.bgm_song,

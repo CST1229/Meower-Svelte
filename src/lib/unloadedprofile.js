@@ -8,6 +8,7 @@ export default function unloadedProfile() {
 		name: null,
 		theme: "orange",
 		mode: true,
+		debug: false,
 		sfx: true,
 		bgm: true,
 		bgm_song: 10,

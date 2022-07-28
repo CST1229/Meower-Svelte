@@ -15,6 +15,7 @@
 	import profile from "../assets/profile.svg";
 	import settings from "../assets/settings.svg";
 	import chat from "../assets/chat.svg";
+	import run from "../assets/run.svg";
 	import logout from "../assets/logout.svg";
 
 	/**
@@ -75,6 +76,17 @@
 				draggable={false}
 			/>
 		</button>
+		{#if $user.debug === true}
+			<button on:click={()=>goto("debug")} class="debug-btn round">
+				<img
+					src={run}
+					alt="Debug"
+					width="90%"
+					height="auto"
+					draggable={false}
+				/>
+		</button>
+		{/if}
 	{/if}
 	<button on:click={async () => {
 		screen.set("setup");
