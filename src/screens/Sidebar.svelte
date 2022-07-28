@@ -14,6 +14,7 @@
 	import home from "../assets/home.svg";
 	import profile from "../assets/profile.svg";
 	import settings from "../assets/settings.svg";
+	import chat from "../assets/chat.svg";
 	import logout from "../assets/logout.svg";
 
 	/**
@@ -60,6 +61,15 @@
 			<img
 				src={settings}
 				alt="Settings"
+				width="90%"
+				height="auto"
+				draggable={false}
+			/>
+		</button>
+		<button on:click={()=>goto("chats")} class="chats-btn round">
+			<img
+				src={chat}
+				alt="Group chats"
 				width="90%"
 				height="auto"
 				draggable={false}
