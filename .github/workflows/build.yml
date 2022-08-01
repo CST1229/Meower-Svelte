@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.action_ref }}
+          ref: ${{ github.ref_name }}
       
       - name: Install
         run: npm install
@@ -36,8 +36,8 @@ jobs:
       
       - name: Create and go to branch folder if needed
         run: |
-          mkdir branches/${{ github.action_ref }}
-          cd branches/${{ github.action_ref }}
+          mkdir branches/${{ github.ref_name }}
+          cd branches/${{ github.ref_name }}
         if: github.action_ref != 'master'
       
       - name: Clear out assets folder
