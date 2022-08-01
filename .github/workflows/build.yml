@@ -4,6 +4,8 @@ on:
     branches-ignore: 
       - gh-pages
   workflow_dispatch:
+env:
+  WORK_DIR: ''
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -38,20 +40,20 @@ jobs:
         run: |
           mkdir branches
           mkdir branches/${{ github.ref_name }}
-          cd branches/${{ github.ref_name }}
+          echo "WORK_DIR=branches/${{ github.ref_name }}/" >> $GITHUB_ENV
         if: github.ref_name != 'master'
       
       - name: Clear out assets folder
-        run: rm -rf ./assets
+        run: rm -rf ./${{ env.WORK_DIR }}assets
       
       - name: Clear out index.html
-        run: rm -rf ./index.html
+        run: rm -rf ./${{ env.WORK_DIR }}index.html
       
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
           name: built-site
-          path: .
+          path: ./${{ env.WORK_DIR }}
       
       - name: Commit and push
         uses: EndBug/add-and-commit@v8
