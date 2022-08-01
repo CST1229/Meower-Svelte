@@ -36,9 +36,10 @@ jobs:
       
       - name: Create and go to branch folder if needed
         run: |
+          mkdir branches
           mkdir branches/${{ github.ref_name }}
           cd branches/${{ github.ref_name }}
-        if: github.action_ref != 'master'
+        if: github.ref_name != 'master'
       
       - name: Clear out assets folder
         run: rm -rf ./assets
