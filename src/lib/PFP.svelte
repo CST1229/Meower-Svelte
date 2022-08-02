@@ -15,7 +15,7 @@
 		<img
 			{alt}
 			title={alt}
-			src={new URL(`./../../assets/avatars/icon_${
+			src={new URL(`./../assets/avatars/icon_${
 				icon === -1 ? 21 : (icon === -2 ? "err" : icon - 1)
 			}.svg`, import.meta.url).href}
 
